@@ -1,0 +1,20 @@
+{
+    "KPackageStructure": "KWin/Effect",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "no@thank.you",
+                "Name": "Marcohard"
+            }
+        ],
+        "Category": "Accessibility",
+        "Description": "Make touchpad gesture better",
+        "EnabledByDefault": true,
+        "Id": "gesture_evolution",
+        "License": "MIT",
+        "Name": "Gesture Evolution"
+    },
+    "X-KDE-Ordering": 60,
+    "X-Plasma-API": "declarativescript"
+}
+
