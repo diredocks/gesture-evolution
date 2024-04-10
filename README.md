@@ -10,7 +10,19 @@ KWin Effect makes touchpad gesture on KDE easier for human beings
 kpackagetool6 --type KWin/Effect --install gesture-evolution/src
 ```
 
+## Upgrade
+
+Same as above, but with command:
+```
+kpackagetool6 --type KWin/Effect --upgrade gesture-evolution/src
+```
+re-login to take effect.
+
+## Configuration
+
+Go to `System Settings -> Desktop Effects -> Gesture Evolution`
+
 ## Usage
 
-1. Perform a three-finger swipe upwards or downwards to toggle the maximized state of the current window.  
-2. Pinch your fingers together to close the current window.
+1. Perform a three-finger swipe upwards or downwards to toggle the maximized (or fullscreen) state of the current window.
+2. Pinch your fingers together to close (or minimize) the current window.
