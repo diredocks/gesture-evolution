@@ -5,13 +5,10 @@ KWinComponents.SceneEffect {
     id: effect
 
     function isActiveWinMaximized(){
-        if(KWinComponents.Workspace.activeWindow.width >= 1920
-            && KWinComponents.Workspace.activeWindow.height >= 1080
-            && KWinComponents.Workspace.activeWindow.x==0
-            && KWinComponents.Workspace.activeWindow.y==0){
-            return true
-        }
-        return false
+        var activeWindow = KWinComponents.Workspace.activeWindow
+        var area = KWinComponents.Workspace.clientArea(KWinComponents.MaximizeArea, activeWindow)
+        console.log(activeWindow.width >= area.width && activeWindow.height >= area.height)
+        return activeWindow.width >= area.width && activeWindow.height >= area.height
     }
 
     function pinchOnActivated() {
@@ -72,38 +69,30 @@ KWinComponents.SceneEffect {
     KWinComponents.SwipeGestureHandler {
         direction: KWinComponents.SwipeGestureHandler.Direction.Up
         fingerCount: 3
-        //onActivated: (KWinComponents.Workspace.activeWindow.x == 0) ? KWinComponents.Workspace.activeWindow.setMaximize(0,0):KWinComponents.Workspace.activeWindow.setMaximize(1,1)
         onActivated: swipeUpOnActivated()
     }
 
     KWinComponents.SwipeGestureHandler {
         direction: KWinComponents.SwipeGestureHandler.Direction.Down
         fingerCount: 3
-        //onActivated: (KWinComponents.Workspace.activeWindow.x == 0) ? KWinComponents.Workspace.activeWindow.setMaximize(0,0):KWinComponents.Workspace.activeWindow.setMaximize(1,1)
         onActivated: swipeDownOnActivated()
     }
 
     KWinComponents.PinchGestureHandler {
         direction: KWinComponents.PinchGestureHandler.Direction.Contracting
         fingerCount: 3
-        //onActivated: KWinComponents.Workspace.activeWindow.closeWindow()
-        //onActivated: KWinComponents.Workspace.slotWindowClose()
         onActivated: pinchOnActivated()
     }
 
     KWinComponents.SwipeGestureHandler {
         direction: KWinComponents.SwipeGestureHandler.Direction.Left
         fingerCount: 3
-        //onActivated: KWinComponents.Workspace.activeWindow.closeWindow()
-        //onActivated: KWinComponents.Workspace.slotWindowClose()
         onActivated: swipeLeftorRight()
     }
 
     KWinComponents.SwipeGestureHandler {
         direction: KWinComponents.SwipeGestureHandler.Direction.Right
         fingerCount: 3
-        //onActivated: KWinComponents.Workspace.activeWindow.closeWindow()
-        //onActivated: KWinComponents.Workspace.slotWindowClose()
         onActivated: swipeLeftorRight()
     }
 }
