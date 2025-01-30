@@ -1,6 +1,8 @@
 # gesture-evolution
 KWin Effect makes touchpad gesture on KDE easier for human beings
 
+Maybe you're also interested in [taj-ny/kwin-gestures](https://github.com/taj-ny/kwin-gestures)
+
 ## Installation
 
 1. Download the repository as a .zip file.  
